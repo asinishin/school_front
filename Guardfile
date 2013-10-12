@@ -15,11 +15,11 @@ guard 'shell' do
       "Deploy HTML\n" + `./deploy-html.sh calendar` + "Done"
     end
   end
-  watch(%r{^booking/.*\.js$}) do |m|
+  watch(%r{^calendar/.*\.js$}) do |m|
     s = "Deploy JS\n" + `./deploy-js.sh calendar` + "Done\n"
     s << "Deploy tests\n" + `./deploy-test.sh calendar` + "Done"
   end
-  watch(%r{^booking/.*\.css$}) do |m|
+  watch(%r{^calendar/.*\.css$}) do |m|
     "Deploy CSS\n" +  `./deploy-css.sh calendar` + "Done"
   end
 
