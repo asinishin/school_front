@@ -16,7 +16,7 @@ describe('Calendar Week View ::', function() {
 			window.app = {};
 			window.app.util = util;
 
-			that.createDailyView = function(part, collection) {
+			that.createWeeklyView = function(part, collection) {
 				var TestWeeklyView = WeeklyView.extend({
 					initialize: function(options) {
 						this.part = options.part;
@@ -31,7 +31,7 @@ describe('Calendar Week View ::', function() {
 					};
 				};
 				
-				that.dailyView = new TestWeeklyView({
+				that.weeklyView = new TestWeeklyView({
 					daily: '2013-10-02',
 					part: part,
 					collection: collection
@@ -124,7 +124,12 @@ describe('Calendar Week View ::', function() {
 					.toEqual('Oct 2, 2013');
 			});		
 	
-			it('should display: Day Line', function() {
+			it('should display: Days of Week', function() {
+				expect(false).toBe(true); // Fake test. Replace it with the real one.
+			});
+
+			it('should display: Time line', function() {
+				expect(false).toBe(true); // Fake test. Replace it with the real one.
 			});
 
 			it('should display: All Rental Units', function() {
