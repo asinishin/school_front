@@ -1,6 +1,6 @@
-// daily_spec.js
+// weekly_spec.js
 
-describe('Calendar Day View ::', function() {
+describe('Calendar Week View ::', function() {
 
 	beforeEach(function() {
 		var flag = false,
@@ -8,16 +8,16 @@ describe('Calendar Day View ::', function() {
 
 		require([
 		    'util',
-			'views/daily'
+			'views/weekly'
 		], function(
 		    util,
-			DailyView
+			WeeklyView
 		) {
 			window.app = {};
 			window.app.util = util;
 
 			that.createDailyView = function(part, collection) {
-				var TestDailyView = DailyView.extend({
+				var TestWeeklyView = WeeklyView.extend({
 					initialize: function(options) {
 						this.part = options.part;
 						this.collection = {};
@@ -31,7 +31,7 @@ describe('Calendar Day View ::', function() {
 					};
 				};
 				
-				that.dailyView = new TestDailyView({
+				that.dailyView = new TestWeeklyView({
 					daily: '2013-10-02',
 					part: part,
 					collection: collection
@@ -113,33 +113,23 @@ describe('Calendar Day View ::', function() {
 	});
 
 	describe('Render', function() {
-		describe('of the 1st part of day', function() {
+		describe('of the week', function() {
 			beforeEach(function() {
-				this.createDailyView(1, this.collection);
-				$('#sandbox').html(this.dailyView.render().$el);		
+				this.createWeeklyView(1, this.collection);
+				$('#sandbox').html(this.weeklyView.render().$el);		
 			});
 	
 			it('should display: Date', function() {
-				expect(this.dailyView.$('#reservation-date').text())
+				expect(this.weeklyView.$('#reservation-date').text())
 					.toEqual('Oct 2, 2013');
 			});		
 	
-			it('should display: Time Line', function() {
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(1)').text()).toEqual('12:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(2)').text()).toEqual('1:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(3)').text()).toEqual('2:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(4)').text()).toEqual('3:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(5)').text()).toEqual('4:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(6)').text()).toEqual('5:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(7)').text()).toEqual('6:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(8)').text()).toEqual('7:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(9)').text()).toEqual('8:00 AM');
-				expect(this.dailyView.$('table#calendar tr:first th:nth-child(10)').text()).toEqual('9:00 AM');
+			it('should display: Day Line', function() {
 			});
 
 			it('should display: All Rental Units', function() {
 				for (var i = 0; i < this.collection.length; i++) {
-					expect(this.dailyView.$('table#calendar tr:nth-child(' + (i+2) +') td:first').text()).toEqual(this.collection[i].rental_unit_name);
+					expect(this.weeklyView.$('table#calendar tr:nth-child(' + (i+2) +') td:first').text()).toEqual(this.collection[i].rental_unit_name);
 				}
 			});
 		});		

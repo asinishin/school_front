@@ -44,7 +44,8 @@ require([
 	'jquery',
 	'jasmine',
 	'jasminehtml',
-	'../test/spec/views/daily_spec'
+	'../test/spec/views/daily_spec',
+	'../test/spec/views/weekly_spec'
 ], function(
 	_,
 	$,
