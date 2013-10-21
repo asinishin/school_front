@@ -3,7 +3,7 @@
 define([
 	'backbone',
 	'underscore',
-	'text!templates/daily.html'
+	'text!templates/daily2.html'
 ], function(
 	Backbone,
 	_,
