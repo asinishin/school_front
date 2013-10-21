@@ -13,19 +13,25 @@
     td
     {
         padding: 5px 10px;
+		
     }
 
     th
     {
-        background: #666;
-        color: white;
+        background: #b8Cfb4;
+        color: black;
         padding: 5px 10px;
     }
 
     td:hover
     {
         cursor: pointer;
-        background: #666;
+        background: #CC3300;
         color: white;
     }
+	tr,td(odd)
+	{
+		background-color:#FF91B5;
+	}
+	
     </style>
