@@ -1,6 +1,6 @@
-	<h1>Week of April 1, 2009</h1>
+	<h1 style="text-align: center;">Week of November 1, 2013</h1>
     <div class="minical">     
-   	 <table width="80%" align="center" >
+   	 <table id="calendar" width="80%" align="center" >
       <div id="head_nav">
       <tr style="width: 172px; height: 28px;">
           <th>Day View</th>
@@ -15,8 +15,8 @@
           <th colspan="4"></th>
           <th colspan="4"></th>
       </tr>
-      <tr style="width: 172px; height: 28px;">
-          <th>July 1, 2013</th>
+      <tr id="timeLine" style="width: 172px; height: 28px;">
+          <th id="reservationDate"><%= new XDate(date).toString("MMM d, yyyy") %></th>
           <th colspan="4">9:00 AM</th>
           <th colspan="4">10:00 AM</th>
           <th colspan="4">11:00 AM</th>
@@ -385,6 +385,7 @@
        <tr>
           <th>Conference 1</td>
           
+              <td></td>
               <td></td>
               <td></td>
               <td></td>

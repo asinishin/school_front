@@ -14,6 +14,7 @@ define([
 	},
 
 	initialize: function(options) {
+		this.date = options.date;
 	},
 	
 	load: function() {
@@ -22,7 +23,7 @@ define([
 			
 	render: function() {
 		var template = _.template(dailyTemplate);
-		this.$el.html(template());
+		this.$el.html(template({ date: this.date }));
 
 	    return this;
 	},
