@@ -32,18 +32,18 @@ define([
 			this.changePage(new DailyView({
 				date: date,
 				part: part
-			}).load());
+			}));
 		},
 	
 		weekly: function() {
 			this.changePage(new WeeklyView({
-			}).load());
+			}));
 		},
 	
 		changePage: function(page) {
 			page.render();
 			//$('#main_content').empty();
-			$('#main_content').replaceWith($(page.el));
+			$('#main').replaceWith($(page.el));
 			window.app.util.removePrompt();
 			window.scrollTo(0, 0);
 		}

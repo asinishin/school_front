@@ -5,7 +5,7 @@
     th,td
     {
         margin: 0;
-        text-align: center;
+        text-align: left;
         border-collapse: collapse;
         outline: 1px solid #e3e3e3;
     }
@@ -18,8 +18,8 @@
 
     th
     {
-        background: #b8Cfb4;
-        color: black;
+        background: #b8cfb4;
+        color: #52525c;
         padding: 5px 10px;
     }
 
@@ -35,3 +35,6 @@
 	}
 	
     </style>
+
+
+ 
