@@ -9,7 +9,7 @@
 
 # Ignore deployment.
 /deploy
-/css/*styles.css
+/css/*.css
 
 # RVM
 .rvmrc
