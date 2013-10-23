@@ -23,6 +23,7 @@ define([
 	initialize: function(options) {
 		this.date = options.date;
 		this.part = options.part;
+		this.rentalUnits = options.rentalUnits;
 	},
 	
 	render: function() {
@@ -34,7 +35,7 @@ define([
 		} else {
 			template = _.template(dailyTemplate3);
 		}
-		this.$el.html(template({ date: this.date }));
+		this.$el.html(template({ date: this.date, collection: this.rentalUnits.models }));
 
 	    return this;
 	},

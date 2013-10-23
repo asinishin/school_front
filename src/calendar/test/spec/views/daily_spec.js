@@ -21,8 +21,8 @@ describe('Calendar Day View ::', function() {
 					initialize: function(options) {
 						this.date = options.date;
 						this.part = options.part;
-						this.collection = {};
-						this.collection.models = options.collection;
+						this.rentalUnits = {};
+						this.rentalUnits.models = options.collection;
 					}
 				});
 				
@@ -116,7 +116,7 @@ describe('Calendar Day View ::', function() {
 	describe('Render', function() {
 		describe('of the 1st part of day', function() {
 			beforeEach(function() {
-				this.createDailyView(1, this.collection);
+				this.createDailyView('1', this.collection);
 				$('#sandbox').html(this.dailyView.render().$el);		
 			});
 	
@@ -140,7 +140,7 @@ describe('Calendar Day View ::', function() {
 
 			it('should display: All Rental Units', function() {
 				for (var i = 0; i < this.collection.length; i++) {
-					expect(this.dailyView.$('table#calendar tr:nth-child(' + (i+2) +') td:first').text()).toEqual(this.collection[i].rental_unit_name);
+					expect(this.dailyView.$('table#calendar tr:nth-child(' + (i+3) +') td:first').text()).toEqual(this.collection[i].rental_unit_name);
 				}
 			});
 		});		
